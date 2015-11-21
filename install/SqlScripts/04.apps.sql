@@ -3,6 +3,9 @@
 CREATE TABLE `Apps`(
   `appid` INT AUTO_INCREMENT PRIMARY KEY COMMENT 'App ID',
   `appname` VARCHAR(32) NOT NULL UNIQUE COMMENT 'App Name',
+  `apptype` ENUM('WinApp','AndroidApp','iOSApp','Web','cURL') NOT NULL DEFAULT 'cURL' COMMENT 'App Type',
+  `cURLAgent` VARCHAR(100) DEFAULT 'cURL' COMMENT 'cURL User-Agent (RESTAPI ONLY)',
+  `returnUrl` VARCHAR(250) DEFAULT 'oob' COMMENT 'Return URL (Web Only)',
   `secret` VARCHAR(32) BINARY COLLATE 'utf8_bin' NOT NULL COMMENT 'App Secret',
   `connecttime` TIMESTAMP NOT NULL COMMENT 'Connect Time',
   `status` INT DEFAULT 0 COMMENT 'Connect Status'
