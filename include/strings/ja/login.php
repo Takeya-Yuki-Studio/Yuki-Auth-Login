@@ -8,15 +8,15 @@
  */
 class login
 {
-    const page_title="登录页";
-    const username="用户名/数字ID/邮箱/昵称";
-    const password="密码";
-    const login="登录";
-    const register="注册";
-    const recover="找回密码";
+    const page_title="ログイン";
+    const username="ユーザー名、メール、ニックネーム、携帯電話";
+    const password="パスワード";
+    const login="ログイン";
+    const register="登録";
+    const recover="パスワードを再設定する";
     const login_normal="常规密码登录";
-    const login_qr="扫码安全登录";
-    const qr_label="使用微信扫一扫登录";
-    const qr_soft="没有微信？点此下载";
-    const qr_soft_package="http://dldir1.qq.com/weixin/android/weixin625android620.apk";
+    const login_qr="";
+    const qr_label="";
+    const qr_soft="";
+    const qr_soft_package="";
 }
