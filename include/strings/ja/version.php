@@ -8,6 +8,6 @@
  */
 class version
 {
-    const copyright="";
-    const license="";
+    const copyright = "";
+    const license = "";
 }

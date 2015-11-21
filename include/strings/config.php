@@ -1,5 +1,5 @@
 <?php
 
-$LANG="ja";
+$LANG = "ja";
 
 ?>

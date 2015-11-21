@@ -1,12 +1,12 @@
 <?php
-    include_once $_SERVER["DOCUMENT_ROOT"]."/include/common/mui.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/include/common/mui.php";
 
 ?>
 <style type="text/css">
-    .footer{
-        width:100%;
+    .footer {
+        width: 100%;
         text-align: center;
-        font-size:20px;
+        font-size: 20px;
     }
 </style>
 <br/><br/>

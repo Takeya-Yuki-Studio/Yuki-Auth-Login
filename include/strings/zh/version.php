@@ -8,6 +8,6 @@
  */
 class version
 {
-    const copyright="版权所有 2009-2015 Yuki 所有权利保留";
-    const license="此站点基于MIT协议发布";
+    const copyright = "版权所有 2009-2015 Yuki 所有权利保留";
+    const license = "此站点基于MIT协议发布";
 }

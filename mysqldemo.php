@@ -9,10 +9,10 @@ header("Content-Type:text/mysql");
 include_once "include/modules/dbconnect.php";
 include_once "include/common/dbpara.php";
 
-$r=db_read("select 'ok' from Accounts where UserName = ? and Password= ?",
+$r = db_read("select 'ok' from Accounts where UserName = ? and Password= ?",
     Array(
-        new dbpara("s","admin"),
-        new dbpara("s","admin")
+        new dbpara("s", "admin"),
+        new dbpara("s", "admin")
     ));
 
 var_dump($r);

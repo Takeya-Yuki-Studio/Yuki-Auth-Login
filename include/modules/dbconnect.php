@@ -1,8 +1,8 @@
 <?php
 
-include_once $_SERVER["DOCUMENT_ROOT"]."/config/dbconfig_r.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/config/dbconfig_w.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/include/common/enum_values.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/config/dbconfig_r.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/config/dbconfig_w.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/include/common/enum_values.php";
 
 
 /**
@@ -10,7 +10,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/include/common/enum_values.php";
  * @param $paras
  * @return bool|string
  */
-function db_write($sql,$paras)
+function db_write($sql, $paras)
 {
     if (dbconfig_w::Provider == "mysqli") {
         //mysqli的情况
@@ -22,34 +22,33 @@ function db_write($sql,$paras)
                     $rel = mysqli_real_query($con, $sql);
                     $data = false;
                     if ($rel != false) {
-                        $data=$rel;
+                        $data = $rel;
                     } else {
                         $data = dberror::SQL_EXCEPTION;
                     }
                 } else {
                     $mt = $con->stmt_init();
                     $mt->prepare($sql);
-                    $types="";
-                    $vals="";
-                    $valsl="";
-                    $i=0;
+                    $types = "";
+                    $vals = "";
+                    $valsl = "";
+                    $i = 0;
                     foreach ($paras as $para) {
-                        if($vals!="")
-                        {
-                            $vals.=",";
+                        if ($vals != "") {
+                            $vals .= ",";
                         }
-                        $i+=1;
+                        $i += 1;
                         $val = $para->value;
-                        $valsl.="$"."vals".$i."='".$val."';";
-                        $vals.="$"."vals".$i;
-                        $types.=$para->type;
+                        $valsl .= "$" . "vals" . $i . "='" . $val . "';";
+                        $vals .= "$" . "vals" . $i;
+                        $types .= $para->type;
                     }
-                    $cmd=($valsl."$"."tmp=mysqli_stmt_bind_param($"."mt,'$types',".$vals.");");
+                    $cmd = ($valsl . "$" . "tmp=mysqli_stmt_bind_param($" . "mt,'$types'," . $vals . ");");
                     eval($cmd);
                     unset($para);
-                    $rel=mysqli_stmt_execute($mt);
+                    $rel = mysqli_stmt_execute($mt);
                     if ($rel != false) {
-                       $data= $rel;
+                        $data = $rel;
                     } else {
                         return dberror::SQL_EXCEPTION;
                     }
@@ -72,12 +71,12 @@ function db_write($sql,$paras)
                     $rel = mysql_query($con, $sql);
                     $data = false;
                     if ($rel != false) {
-                        $data=true;
+                        $data = true;
                     } else {
                         $data = dberror::SQL_EXCEPTION;
                     }
                 } else {
-                    $data=dberror::MYSQL_NO_PREPARE_EXCEPTION;
+                    $data = dberror::MYSQL_NO_PREPARE_EXCEPTION;
                 }
                 mysql_close($con);
                 return $data;
@@ -95,7 +94,7 @@ function db_write($sql,$paras)
  * @param $paras
  * @return array|string
  */
-function db_read($sql,$paras)
+function db_read($sql, $paras)
 {
     if (dbconfig_r::Provider == "mysqli") {
         //mysqli的情况
@@ -116,22 +115,21 @@ function db_read($sql,$paras)
                 } else {
                     $mt = $con->stmt_init();
                     $mt->prepare($sql);
-                    $types="";
-                    $vals="";
-                    $valsl="";
-                    $i=0;
+                    $types = "";
+                    $vals = "";
+                    $valsl = "";
+                    $i = 0;
                     foreach ($paras as $para) {
-                        if($vals!="")
-                        {
-                            $vals.=",";
+                        if ($vals != "") {
+                            $vals .= ",";
                         }
-                        $i+=1;
+                        $i += 1;
                         $val = $para->value;
-                        $valsl.="$"."vals".$i."='".$val."';";
-                        $vals.="$"."vals".$i;
-                        $types.=$para->type;
+                        $valsl .= "$" . "vals" . $i . "='" . $val . "';";
+                        $vals .= "$" . "vals" . $i;
+                        $types .= $para->type;
                     }
-                    $cmd=($valsl."$"."tmp=mysqli_stmt_bind_param($"."mt,'$types',".$vals.");");
+                    $cmd = ($valsl . "$" . "tmp=mysqli_stmt_bind_param($" . "mt,'$types'," . $vals . ");");
                     eval($cmd);
                     unset($para);
                     mysqli_stmt_execute($mt);
@@ -170,7 +168,7 @@ function db_read($sql,$paras)
                         $data = dberror::SQL_EXCEPTION;
                     }
                 } else {
-                    $data=dberror::MYSQL_NO_PREPARE_EXCEPTION;
+                    $data = dberror::MYSQL_NO_PREPARE_EXCEPTION;
                 }
                 mysql_close($con);
                 return $data;
