@@ -16,5 +16,5 @@ CREATE TABLE `acctokens`(
   1. User can deactivate Tokens
   2. Access Token is valid for 30 minutes
   3. Refresh Token is valid for 7 days
-  4. Refresh Token will be extended when App has extended Access Token
+  4. Refresh Token will be rebuit when App has rebuilt Access Token
  */
