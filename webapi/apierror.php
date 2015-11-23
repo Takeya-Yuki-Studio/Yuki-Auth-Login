@@ -1,3 +1,3 @@
 <?php
 
-header("Location: http://auth-server/cp/error.php?msg=".$_GET["msg"],true,302);
+header("Location: https://takeya.network/cp/error.php?msg=".$_GET["msg"],true,302);

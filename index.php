@@ -1,5 +1,5 @@
 <?php
 
-header("Location: http://auth-server/cp/index.php",true,302);
+header("Location: https://takeya.network/cp/index.php",true,302);
 
 ?>
