@@ -14,4 +14,9 @@ class install
     const testdb="接続のテストする";
     const dbok="データベース接続に成功しました";
     const dbfail="データベース接続に失敗しました";
+    const next="次へ";
+    const retry="インストールを再試行する";
+    const installing=" をインストールします ...... ";
+    const installok="成功";
+    const installfail="失敗";
 }

@@ -89,6 +89,11 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/include/common/mui.php";
             <div class="fields" ><div></div>
             <input type="button" id="testw" value="<?php echo install::testdb?>"/></div>
         </div>
+        <div class="conf">
+            <div class="fields" >
+                <input type="submit" value="<?php echo install::next ?>"/>
+            </div>
+        </div>
     </form>
 </body>
 </html>

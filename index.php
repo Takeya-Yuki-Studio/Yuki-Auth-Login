@@ -1,5 +1,5 @@
 <?php
 
-header("Location: https://takeya.network/cp/index.php",true,302);
+header("location: https://takeya.network/cp/index.php");
 
 ?>

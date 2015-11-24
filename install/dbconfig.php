@@ -45,3 +45,5 @@ fputs($s, $template_w);
 
 fclose($r);
 fclose($s);
+
+header("location: https://takeya.network/install/install.php");
