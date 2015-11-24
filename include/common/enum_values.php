@@ -7,4 +7,5 @@ class dberror
     const SQL_EXCEPTION = "SQL EXCEPTION";
     const CONNECT_EXCEPTION = "CONNECT EXCEPTION";
     const MYSQL_NO_PREPARE_EXCEPTION = "MYSQL NO PREPARE EXCEPTION";
+    const OK = "OK";
 }
