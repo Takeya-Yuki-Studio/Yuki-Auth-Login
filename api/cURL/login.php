@@ -7,6 +7,8 @@ $appkey=$_POST["appkey"];
 
 $app=curl_check($appid,$appkey);
 
+$uid=$_POST["uname"];
+$upwd=$_POST["upwd"];
 
-echo $app["appname"];
-exit;
+$user=user_check($uid,$upwd);
+echo $user["uid"];

@@ -8,10 +8,14 @@ switch($api){
         include $_SERVER["DOCUMENT_ROOT"] . "/api/cURL/info.php";
         exit;
         break;
+    case 'AUTH':
+        include $_SERVER["DOCUMENT_ROOT"] . "/api/cURL/login.php";
+        exit;
+        break;
     default:
         $err=ErrorCode::ApiNotFound;
         header("HTTP/1.0 ".$err." ".ConvertErrCodeToMsg($err)." ",true);
-        echo $api." Not Found.\r\n";
+        echo $api." Not Found (Error).\r\n";
         exit;
         break;
 }
