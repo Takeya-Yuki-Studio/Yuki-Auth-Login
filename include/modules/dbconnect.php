@@ -18,6 +18,7 @@ function db_write($sql, $paras)
             $con = mysqli_connect(dbconfig_w::DataSource, dbconfig_w::UserID, dbconfig_w::Password,
                 dbconfig_w::InitialCatalog, dbconfig_w::Port);
             if ($con != false) {
+                mysqli_real_query($con,"SET NAMES UTF8");
                 if ($paras == null) {
                     $rel = mysqli_real_query($con, $sql);
                     $data = false;
@@ -67,6 +68,7 @@ function db_write($sql, $paras)
             $con = mysql_connect(dbconfig_w::DataSource, dbconfig_w::UserID, dbconfig_w::Password,
                 dbconfig_w::InitialCatalog, dbconfig_w::Port);
             if ($con != false) {
+                mysql_query($con,"SET NAMES UTF8");
                 if ($paras == null) {
                     $rel = mysql_query($con, $sql);
                     $data = false;
@@ -102,6 +104,7 @@ function db_read($sql, $paras)
             $con = mysqli_connect(dbconfig_r::DataSource, dbconfig_r::UserID, dbconfig_r::Password,
                 dbconfig_r::InitialCatalog, dbconfig_r::Port);
             if ($con != false) {
+                mysqli_real_query($con,"SET NAMES UTF8");
                 if ($paras == null) {
                     $table = mysqli_query($con, $sql);
                     $data = Array();
@@ -157,6 +160,7 @@ function db_read($sql, $paras)
             $con = mysql_connect(dbconfig_r::DataSource, dbconfig_r::UserID, dbconfig_r::Password,
                 dbconfig_r::InitialCatalog, dbconfig_r::Port);
             if ($con != false) {
+                mysql_query($con,"SET NAMES UTF8");
                 if ($paras == null) {
                     $table = mysql_query($con, $sql);
                     $data = Array();
