@@ -8,7 +8,7 @@ function user_check($uid,$upwd)
             new dbpara('s', $upwd)
         ));
     if ($user) {
-        return $user;
+        return $user[0];
     } else {
         $err = ErrorCode::Accepted;
         header("HTTP/1.0 " . $err . " " . ConvertErrCodeToMsg($err) . " ", true);
