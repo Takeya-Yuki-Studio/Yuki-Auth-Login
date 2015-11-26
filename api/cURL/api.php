@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER["DOCUMENT_ROOT"] . "/api/common/apicommon.php";
 include_once $_SERVER["DOCUMENT_ROOT"] . "/api/common/errcode.php";
 
 $api=$_POST["method"];
