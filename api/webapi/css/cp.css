@@ -1,0 +1,28 @@
+div.title{
+    text-align: center;
+    font-size: 5em;
+    margin-top:30px;
+}
+
+div.selectorlist{
+    margin-top:100px;
+}
+
+div.selector{
+    margin:30px;
+    width:70%;
+    font-size:5em;
+    height:200px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+}
+
+div.webapi{
+    background-color: blue;
+}
+div.appapi{
+    background-color: chocolate;
+}

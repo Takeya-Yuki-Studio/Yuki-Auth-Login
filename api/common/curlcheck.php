@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER["DOCUMENT_ROOT"] ."/api/common/dbcon.php";
 
 /**
  * @param $appid
