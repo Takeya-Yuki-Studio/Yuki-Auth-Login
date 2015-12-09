@@ -2,6 +2,7 @@
 include_once $_SERVER["DOCUMENT_ROOT"] . "/api/common/apicommon.php";
 include_once $_SERVER["DOCUMENT_ROOT"] . "/api/common/errcode.php";
 include_once $_SERVER["DOCUMENT_ROOT"] . "/api/common/webcheck.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/include/common/antibot.php";
 
 $id=$_GET["appid"];
 $key=$_GET["appsecret"];
@@ -39,3 +40,30 @@ if($ref) {
         exit;
     }
 }
+?>
+
+<?php
+include_once $_SERVER["DOCUMENT_ROOT"] . "/include/common/mui.php";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo cp::loginmsg($app["appname"]); ?></title>
+    <link href="/api/webapi/cssbootstrapper.php/common,login" rel="stylesheet"/>
+    <script type="text/javascript"
+            src="/api/webapi/jsbootstrapper.php/jquery-2.1.4,weblogin"></script>
+    <meta http-equiv="Content-Type" content="text/html,charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+<div class="title"><?php echo cp::loginmsg($app["appname"]); ?></div>
+    <form id="form" method="post" action="/api/webapi/webauth.php">
+        <input type="text" id="username" placeholder="<?php echo login::username; ?>"/>
+        <input type="text" id="password" placeholder="<?php echo login::password; ?>"/>
+        <input type="hidden" id="csrf_and_antibot" value="<?php echo csrf_antibot();?>" />
+        <input type="hidden" id="app" value="<?php echo $app["appid"];?>" />
+        <input type="hidden" id="key" value="<?php echo csrf_token($app["secret"]); ?>" />
+        <input type="hidden" id="info" value="base_info" />
+        <input type="button" id="login" value="<?php echo login::login?>" />
+    </form>
+</body>
