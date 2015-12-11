@@ -8,3 +8,7 @@ function csrf_antibot(){
 function csrf_token($key){
     return $key;
 }
+
+function csrf_untoken($token){
+    return $token;
+}

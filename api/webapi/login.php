@@ -57,13 +57,13 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/include/common/mui.php";
 </head>
 <body>
 <div class="title"><?php echo cp::loginmsg($app["appname"]); ?></div>
-    <form id="form" method="post" action="/api/webapi/webauth.php">
-        <input type="text" id="username" placeholder="<?php echo login::username; ?>"/>
-        <input type="text" id="password" placeholder="<?php echo login::password; ?>"/>
-        <input type="hidden" id="csrf_and_antibot" value="<?php echo csrf_antibot();?>" />
-        <input type="hidden" id="app" value="<?php echo $app["appid"];?>" />
-        <input type="hidden" id="key" value="<?php echo csrf_token($app["secret"]); ?>" />
-        <input type="hidden" id="info" value="base_info" />
-        <input type="button" id="login" value="<?php echo login::login?>" />
+    <form id="form" name="form" method="post" action="/api/webapi/webauth.php">
+        <input type="text" id="username" name="username" placeholder="<?php echo login::username; ?>"/>
+        <input type="password" id="password" name="password" placeholder="<?php echo login::password; ?>"/>
+        <input type="hidden" id="csrf_and_antibot" name="csrf_and_antibot" value="<?php echo csrf_antibot();?>" />
+        <input type="hidden" id="app" name="app" value="<?php echo $app["appid"];?>" />
+        <input type="hidden" id="key" name="key" value="<?php echo csrf_token($app["secret"]); ?>" />
+        <input type="hidden" id="info" name="info" value="base_info" />
+        <input type="submit" id="login" value="<?php echo login::login?>" />
     </form>
 </body>
